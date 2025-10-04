@@ -2,11 +2,7 @@ const { exec } = require('child_process');
 const os = require('os');
 const path = require('path');
 
-// Detect the operating system (Linux/macOS vs Windows)
-const isWindows = os.platform() === 'win32';
-
-// Path to the correct script based on the operating system
-const scriptPath = path.join(__dirname, isWindows ? 'run.bat' : 'run.sh');
+const scriptPath = path.join(__dirname, 'run.sh');
 
 // Ensure the correct script is executable on Linux/macOS
 if (!isWindows) {
