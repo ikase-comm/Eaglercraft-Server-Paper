@@ -4,11 +4,10 @@ const path = require('path');
 
 const scriptPath = path.join(__dirname, 'run.sh');
 
-// Ensure the correct script is executable on Linux/macOS
-if (!isWindows) {
-    const fs = require('fs');
-    fs.chmodSync(scriptPath, '755');  // Make sure it's executable
-}
+
+const fs = require('fs');
+fs.chmodSync(scriptPath, '755');  // Make sure it's executable
+
 
 // Run the appropriate script based on the OS
 exec(scriptPath, (error, stdout, stderr) => {
